@@ -29,4 +29,3 @@ $res = $ucp->get('user');
 print_r(json_decode($res));
 
 ```
-# sas4connector-php
