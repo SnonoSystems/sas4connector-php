@@ -15,9 +15,18 @@ php composer.phar install
 __Usage__
 ```
 require_once 'SASConnector.php';
-$api = new SASConnector('demo4.sasradius.com', 'manager_username', 'manager_password');
-$api->login();
-$res = $api->post('index/user', []);
+
+$acp = new SASConnector('demo4.sasradius.com', 'admin', 'admin', 'acp');
+$acp->login();
+$res = $acp->post('index/user', []);
+
 print_r(json_decode($res));
+
+
+$ucp = new SASConnector('demo4.sasradius.com', 'demo1', '1234', 'ucp');
+$ucp->login();
+$res = $ucp->get('user');
+print_r(json_decode($res));
+
 ```
 # sas4connector-php
